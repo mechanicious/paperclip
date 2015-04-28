@@ -1,0 +1,15 @@
+{
+    "name": "mechanic/paperclip",
+    "description": "PaperClip blog software dependencies.",
+    "require": {
+       "jacopo/bootstrap-3-table-generator": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateusz Zawartka",
+            "email": "zuires@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

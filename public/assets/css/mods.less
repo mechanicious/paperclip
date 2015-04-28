@@ -1,0 +1,582 @@
+/*
+	global
+*/
+.btn
+{
+	i
+	{
+		font-size: 22px;
+		line-height: 15px;
+		vertical-align: middle;
+		margin-left: -12px;
+		margin-right: 12px;
+	}
+	&.btn-warning i
+	{
+		color: #b44c07;
+		text-shadow: 0 0 1px #e88a3b;
+	}
+	&.btn-success i
+	{
+		color: #2f720a;
+		text-shadow: 0 0 1px #5c9b30;
+	}
+	&.btn-primary i
+	{
+		color: #ffffff;
+		text-shadow: 0 0 1px #145e51;
+		&.fa.fa-search
+		{
+			margin-left: 0px;
+			margin-right: 0px;
+			text-align: center;
+		}
+	}
+}
+
+.mod-landingPage
+{
+	.list-unstyled
+	{
+		margin-bottom: 0;
+	}
+	.search
+	{
+		margin-bottom: 10px;
+	}
+	&.btn-primary i
+	{
+		&.fa.fa-search
+		{
+			margin-left: 0px;
+			margin-right: 0px;
+			text-align: center;
+		}
+	}
+	background-color: #172129;
+	padding-top: 17px;
+	color: #acb2b7;
+	.row.lp-btn-panel
+	{
+		margin-bottom: 18px;
+	}
+	@media (max-width: 991px)
+	{
+		text-align: center;
+		.main-menu li
+		{
+			padding: 10px;
+			&:hover
+			{
+				background-color: lighten(#172129, 5%);
+			}
+		}
+	}
+	.menu
+	{
+		@media (max-width: 991px)
+		{
+			padding-left: 0px;
+		}
+	}
+	.main-menu li > a
+	{
+		display: block;
+		padding: 4px 0;
+		color: #BDC3C8;
+	}
+	.logo
+	{
+		margin-bottom: 20px;
+	}
+}
+
+.mod-main-slider
+{
+	position: relative;
+	
+	.list-unstyled
+	{
+		margin-bottom: 0;
+	}
+	.slide img
+	{
+		position: absolute;
+		top: -10px;
+		width: 100%;
+		@media (min-width: 991px) and (max-width: 1144px)
+		{
+			height: 470px;
+		}
+		height: 434px;
+	}
+	
+	.articles
+	{
+		position: relative;
+		top: -20px;
+		background-image: url('../img/bg-articles.png');
+		li
+		{
+			padding: 12px 10px;
+			margin-top: 10px;
+			a
+			{
+				color: #fff;
+			}
+		}
+		img
+		{
+			float: left;
+			margin-right: 10px;
+			box-shadow: 0 1px 2px #000; 
+			width: 77px;
+			height 77px;
+			border-radius: 1;
+		}
+		h3
+		{
+			margin-top: 0;
+			display: block;
+			color: #e9e5b0;
+			font-size: 14px;
+			font-family: Georgia, Century, 'Times New Roman', serif;
+			text-shadow: 0 1px -0px #030405;
+		}
+		p
+		{
+			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+			font-size: 12px;
+			margin-left: 5px;
+			color: #dce7ee;
+		}
+	}
+	.article
+	{
+		a:hover
+		{
+			text-decoration: none;
+		}
+		a
+		{
+			display: block;
+		}
+		&:hover
+		{
+			background-color: #172129;
+		}
+	}
+}
+
+.mod-subscribe-newsletter
+{
+	background-image: url('../img/stripes-green.jpg');
+	margin-top: -20px;
+	border-top: solid 5px #187262;
+	h2
+	{
+		color: #fff;
+		font: normal 26px/36px Georgia, 'Times New Roman', Century, serif;
+		text-shadow: 1px 1px 1px #0d6152;
+		margin-top: 4px;
+	}
+	label
+	{
+		color: #013d32;
+		text-shaodow: 1px 1px 0 #1f9481;
+		font-variant: 300;
+	}
+	.btn
+	{
+		i
+		{
+			font-size: 14px;
+			vertical-align: middle;
+		}
+	}
+	.btn-default
+	{
+		background: #04544a;
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top, #04544a 0%, #03483d 50%, #023a30 51%, #023a30 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#04544a), color-stop(50%,#03483d), color-stop(51%,#023a30), color-stop(100%,#023a30));
+		background: -webkit-linear-gradient(top, #04544a 0%,#03483d 50%,#023a30 51%,#023a30 100%);
+		background: -o-linear-gradient(top, #04544a 0%,#03483d 50%,#023a30 51%,#023a30 100%);
+		background: -ms-linear-gradient(top, #04544a 0%,#03483d 50%,#023a30 51%,#023a30 100%);
+		background: linear-gradient(to bottom, #04544a 0%,#03483d 50%,#023a30 51%,#023a30 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04544a', endColorstr='#023a30',GradientType=0 );
+		border-bottom: 1px solid #023129;
+		border-top: 0;
+		border-right: 0;
+		border-left: 0;
+		color: #fff;
+		text-shadow: 0 1px 0 #012821;
+	}
+	.btn-subscribe
+	{
+		@media (min-width: 992px)
+		{
+			margin-top: 50px;
+			margin-left: -36px;
+		}
+	}
+	.form-subscribe
+	{
+		margin-bottom: 15px;
+	}
+}
+
+.social-media
+{
+	float: left;
+	clear: both;
+	margin-right: 20px;
+	a:hover
+	{
+		text-decoration: none;
+	}
+	.middle-icon
+	{
+		margin-top: 13px;
+	}
+}
+
+.mod-content
+{
+	.search-result
+	{
+		figure
+		{
+			float: left;
+			margin-right: 20px;
+			padding: 0;
+		}
+	}
+	margin-top: 35px;
+	margin-bottom: 45px;
+	h2
+	{
+		margin-bottom: 40px;
+		font-size: 24px;
+		color: #3a9686;
+		font-weight: 800;
+		a
+		{
+			color: #d50101;
+			font-weight: bold;
+			font-size: 13px;
+			font-style: italic;
+		}
+	}
+	article
+	{
+		header
+		{
+			font: 900 15px/19px 'Merriwatcher', Georgia, Century, 'Times New Roman', serif;
+			margin-bottom: 10px;
+		}
+		p
+		{
+			font: 400 13px/18px 'Open Sans', Helvetica, Arial, sans-serif;
+		}
+		figure
+		{
+			float: left;
+			margin-right: 25px;
+			width: 82px;
+			height: 82px;
+			border-radius: 50%;
+			margin-left: 4px;
+		}
+	}
+	footer
+	{
+		text-align: right;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 5px;
+		margin-bottom: 15px;
+		.btn-info
+		{
+			font-size: 11px;
+			padding: 3px 18px;
+			i
+			{
+				font-size: 11px;
+			}
+		}
+	}
+	article.media
+	{
+		img
+		{
+			margin-bottom: 5px;
+		}
+		span.span-date
+		{
+			display: block;
+			color: #f37127;
+			margin-bottom: 11px;
+		}
+		p
+		{
+			font-size: 12px;
+		}
+	}
+	&.last
+	{
+		margin-bottom: 100px;
+	}
+}
+
+.mod-sponsors
+{
+	background-image: url('../img/stripes-blue.jpg');
+	border-top: solid 5px #1172bc;
+	h2
+	{
+		margin-top: 15px;
+		color: #fff;
+		font: normal 26px/36px Georgia, 'Times New Roman', Century, serif;
+		text-shadow: 1px 1px 1px #0b6cb5;
+		a
+		{
+			font: italic 900 12px/12px 'Open Sans', Helvetica,Arial, sans-serif;
+			color: #fff;
+			margin-left: 20px;
+		}
+	}
+	.logo-frame
+	{
+		overflow: hidden;
+		.logo-list 
+		{
+			margin-bottom: 30px;
+			position: relative;
+			right: 0;
+			width: 9999px;
+			li
+			{
+				display: inline-block;
+				margin: 0 20px;
+			}
+		}
+	}
+}
+
+body > footer
+{
+	padding-bottom: 20px;
+	@media (max-width: 991px)
+	{
+		text-align: center;
+		section
+		{
+			margin-bottom: 50px;
+		}
+	}
+	background-color: #151515;
+	padding-top: 50px;
+	font-size: 13px;
+	color: #808080;
+	text-shadow: 0 1px 0 #000;
+
+	header
+	{
+		font: 900 18px/36px Merriwatcher,Georgia,Century,'Times New Roman',serif;
+		color: #a8a8a8;
+	}
+	.widget-more a
+	{
+		font-size: 13px;
+		color: #1c8673;
+		text-shadow: 0 1px 0 #000;
+	}
+	.widget-contact-form
+	{
+		position: relative;
+		background-color: #212121;
+		padding: 10px 20px 20px 20px;
+		input, textarea
+		{
+			color: #a8a8a8;
+			background-color: #181818;
+			border-radius: 0;
+			border: 0;
+			font: italic 14px/14px Georgia, Century, Times New Roman, serif;
+		}
+		button
+		{
+			&.btn-default
+			{
+				border-radius: 0;
+				background-color: #1c8673;
+				border: none;
+				font-size: 13px;
+				color: #e3f0ee;
+			}
+			
+		}
+		textarea
+		{
+			padding: 11px;
+		}
+		.form-group
+		{
+			position: relative;
+			
+			.state
+			{
+				display: none;
+				padding: 8px;
+				text-shadow: none;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				&.state-valid
+				{
+					background-color: #4a841c;
+					color: #26430e;	
+				}
+				&.state-unvalid
+				{
+					padding: 8px 10px;
+					background-color: #AC1925;
+					color: #5A0910;
+				}
+			}
+		}
+	}
+}
+
+.mod-slogan
+{
+	text-align: center;
+	margin: 60px 0;
+	span
+	{
+		font: italic normal 29px/48px Georgia, Merriwatcher, Century,'Times New Roman',serif;
+	}
+}
+
+.mod-post
+{
+	margin-bottom: 70px;
+	header 
+	{
+		h1
+		{
+			font: normal bold 24px/48px Merriwatcher, Georgia, Century, 'Times New Roman', serif;
+			margin-top: 0;
+		}
+	}
+	article
+	{
+		margin-bottom: 50px;
+	}
+
+	.date
+	{
+		color: #1c8673;
+		margin-bottom: 30px;
+		display: block;
+	}
+
+	figure
+	{
+		margin-bottom: 15px;
+		img
+		{
+			width: 100%;
+		}
+	}
+
+	p
+	{
+		letter-spacing: 0.1px;
+		word-spacing: 1px;
+		line-height: 1.6em;
+	}
+	.teasers
+	{
+		li
+		{
+			display: inline-block;
+		}
+	}
+}
+
+.widgets
+{
+	h2
+	{
+		font-size: 18px;
+		margin-bottom: 3px;
+		color: #000;
+		font-weight: 400;
+		i
+		{
+			color: #1c8673;
+			font-size: 28px;
+			margin-right: 10px;
+		}
+	}
+	li
+	{
+		border-bottom: 1px solid #ededed;
+		margin-bottom: 6px;
+		i
+		{
+			color: #d53535;
+			margin-right: 10px;
+		}
+	}
+	&.newsletter
+	{
+		header
+		{
+			margin-bottom: 10px;
+		}
+		.right
+		{
+			text-align: right;
+		}
+		.form-horizontal
+		{
+			padding: 10px;
+			border: 1px solid #ededed;
+			border-radius: 5px;
+		}
+		.form-group
+		{
+			margin-bottom: 5px;
+		}
+		img
+		{
+			float: right;
+			
+		}
+		.btn-subscribe
+		{
+			color: #fff;
+			font-size: 13px;
+			padding: 4px 8px;
+			text-shadow: 0 1px 1px #b34917;
+			background: #ed7834; /* Old browsers */
+			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkNzgzNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ViNmQyYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2U4NjAxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlODVmMWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+			background: -moz-linear-gradient(top,  #ed7834 0%, #eb6d2a 50%, #e8601f 51%, #e85f1e 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ed7834), color-stop(50%,#eb6d2a), color-stop(51%,#e8601f), color-stop(100%,#e85f1e)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #ed7834 0%,#eb6d2a 50%,#e8601f 51%,#e85f1e 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #ed7834 0%,#eb6d2a 50%,#e8601f 51%,#e85f1e 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #ed7834 0%,#eb6d2a 50%,#e8601f 51%,#e85f1e 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #ed7834 0%,#eb6d2a 50%,#e8601f 51%,#e85f1e 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed7834', endColorstr='#e85f1e',GradientType=0 ); /* IE6-8 */
+			border-bottom: 2px solid #c7591c;
+			i 
+			{
+				font-size: 13px;
+				margin-left: 0;
+			}
+		}
+	}
+}
