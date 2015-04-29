@@ -15,7 +15,7 @@
 					<?php 
 						$category = $post->categories()->first();
 					 ?>
-					<a href="{{{ dash_encode(route('public.category', array('id' => $category->id, 'lang' => \Lang::getLocale(), 'title' => $category->category))) }}}">terug naar {{{ $category->category or "Title" }}}</a>
+					<a href="{{{ route('public.category', array('id' => $category->id, 'lang' => \Lang::getLocale(), 'title' => dash_encode($category->category))) }}}">terug naar {{{ $category->category or "Title" }}}</a>
 					<article>
 						<header>
 							<h1>{{{ $post->title }}}</h1>

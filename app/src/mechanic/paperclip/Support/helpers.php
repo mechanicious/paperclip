@@ -8,7 +8,7 @@
 	 */
 	function dash_encode($url)
 	{
-	  return preg_replace('/[^0-9A-Za-z\-\/\:]+/', '-', $url);
+	  return preg_replace('/[^0-9A-Za-z]+/', '-', $url);
 	}
 
 	function startsWith($haystack, $needle) {
