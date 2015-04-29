@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'production_paperclip',
+			'database'  => '',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

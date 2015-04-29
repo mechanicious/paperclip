@@ -1,5 +1,8 @@
 <?php
 
+Route::filter('locale.setup', 'LocaleSetupFilter');
+Route::filter('cache.refresher', 'CacheRefreshFilter');
+
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -48,8 +51,6 @@ Route::filter('auth', function()
 	}
 });
 
-Route::filter('locale.setup', 'LocaleSetupFilter');
-
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
@@ -91,4 +92,12 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+});
+
+
+Route::filter('no.browser.cache', function()
+{
+	header('Last-Modified: ' . gmdate("D, d M Y H:i:s", time()). ' GMT');
+	header('Expires: ' . gmdate("D, d M Y H:i:s", time()) + 3600 . ' GMT');
+	header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
 });

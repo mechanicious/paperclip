@@ -26,7 +26,7 @@ Route::get('admin', function() {
 });
 
 Route::get('/', function() {
-	return Redirect::route('public.index', array('lang' => Lang::getFallback()));
+	return Redirect::route('public.index', array('lang' => Lang::getLocale()));
 });
 
 Route::group(array('prefix' => '{lang}/public', 'before' => 'locale.setup'), function($lang)
@@ -74,7 +74,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'guest'), function()
 	Route::post('signup',	array('as' => 'admin.create',	'uses' => 'AdminSignupController@create'));
 });
 
-Route::group(array('prefix' => 'admin/dashboard/', 'before' => 'auth'), function()
+Route::group(array('prefix' => 'admin/dashboard/', 'before' => array('auth', 'cache.refresher'), 'after' => array('no.browser.cache')), function()
 {
 	Route::get('prepare', array('as' => 'admin.dashboard.prepare',		'uses' => 'AdminHomeController@prepare'));
 

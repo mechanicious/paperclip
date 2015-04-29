@@ -2,18 +2,13 @@
 
 class DatabaseSeeder extends Seeder {
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		Eloquent::unguard();
-		$this->call('UserTableSeeder');
+    public function run()
+    {
+        $this->call('UserTableSeeder');
+        $this->call('LanguageTableSeeder');
+
         $this->command->info('User table seeded!');
-		// $this->call('UserTableSeeder');
-	}
+    }
 
 }
 
@@ -22,18 +17,16 @@ class UserTableSeeder extends Seeder {
     public function run()
     {
         DB::table('users')->delete();
-
+        User::unguard();
         User::create(array(
-        	// 'id' 				=> 'foo@bar.com',
-        	'firstname' 		=> 'Foo',
-        	'lastname' 			=> 'Bar',
-        	'password' 			=> Hash::make('foobarbaz'),
-        	'email' 			=> 'foo@bar.com',
-        	'remember_token' 	=> str_repeat('t', 100)
-        	// 'created_at' 		=> 'foo@bar.com',
-        	// 'updated_at' 		=> 'foo@bar.com',
-        	));
+            'email' => 'foo@bar.com',
+            'password' => Hash::make('foofoofoo'),
+            'firstname' => 'John',
+            'lastname' => 'Doe',
+            ));
+        User::reguard();
     }
+
 }
 
 class LanguageTableSeeder extends Seeder {
@@ -41,50 +34,13 @@ class LanguageTableSeeder extends Seeder {
     public function run()
     {
         DB::table('languages')->delete();
-
-        User::create(array(
-        	// 'id' 				=> 'foo@bar.com',
-        	'language' 			=> 'English',
-        	'abbreviation' 		=> 'en',
-        	'user_id' 			=> '1'
-        	// 'created_at' 		=> 'foo@bar.com',
-        	// 'updated_at' 		=> 'foo@bar.com',
-        	));
+        Language::unguard();
+        Language::create(array(
+            'language' => 'Nederlands',
+            'abbreviation' => 'nl',
+            'user_id' => '1',
+            ));
+        Language::reguard();
     }
-}
 
-class CategoryTableSeeder extends Seeder {
-
-    public function run()
-    {
-        DB::table('categories')->delete();
-
-        User::create(array(
-        	// 'id' 				=> 'foo@bar.com',
-        	'category' 			=> 'News',
-        	'description' 		=> NULL,
-        	'user_id' 			=> '1',
-        	'language_id' 		=> '1'
-        	// 'created_at' 		=> 'foo@bar.com',
-        	// 'updated_at' 		=> 'foo@bar.com',
-        	));
-    }
-}
-
-class PostTableSeeder extends Seeder {
-
-    public function run()
-    {
-        DB::table('posts')->delete();
-
-        User::create(array(
-        	// 'id' 				=> 'foo@bar.com',
-        	'title' 			=> 'Standard Post Check',
-        	'post' 				=> NULL,
-        	'category_id' 		=> '1',
-        	'user_id' 			=> '1'
-        	// 'created_at' 		=> 'foo@bar.com',
-        	// 'updated_at' 		=> 'foo@bar.com',
-        	));
-    }
 }

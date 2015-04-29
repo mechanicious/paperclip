@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col col-md-9">
 				<h2>{{{ $category->title }}}</h2>
-						@if( count($category->posts()) < 1 )
+						@if( count($category->posts()) >= 1 )
 							@foreach($category->posts()->where('posts.deleted_at', '=', null)->get() as $post)
 							<div class="search-result">
 								<figure class="col col-md-2">

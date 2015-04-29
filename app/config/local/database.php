@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'paperclip',
+			'database'  => 'production_paperclip',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

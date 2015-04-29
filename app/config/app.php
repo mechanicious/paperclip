@@ -50,6 +50,9 @@ return array(
 	| by the translation service provider. You are free to set this value
 	| to any of the locales which will be supported by the application.
 	|
+	| Router will use it as the default language when no languge has been
+	| specified in the url explicitely.
+	|
 	*/
 
 	'locale' => 'nl',
