@@ -101,5 +101,7 @@ return array(
 	*/
 
 	'attributes' => array(),
+	// Less ambigious than exists
+	'duplicate-name' => 'A(n) :entity with this name already exists.'
 
 );

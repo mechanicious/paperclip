@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateGlobalStatvarsTable extends Migration {
+class CreateBlobsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,13 @@ class CreateGlobalStatvarsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('globalstatvars', function(Blueprint $table)
+		Schema::create('blobs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('var', 100);
-			$table->string('stat', 100);
+			$table->string('name');
+			$table->string('url');
+			$table->string('path');
+			$table->integer('size');
 			$table->timestamps();
 			$table->softDeletes();
 		});
@@ -30,7 +32,7 @@ class CreateGlobalStatvarsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('globalstatvars');
+		Schema::drop('blobs');
 	}
 
 }

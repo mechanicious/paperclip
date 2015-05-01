@@ -42,7 +42,7 @@
 									?>
 									@if ( ! is_null($posts))
 										@foreach($posts as $post)
-											<li><a href="{{ route('public.post', array('lang' => \Lang::getLocale(), 'id' => $post->id, 'title' => dash_encode($post->title))) }}">{{{ $post->title }}}</a></li>
+											<li><a href="{{ $post->categories()->first()->getCategoryPageUrl() }}">{{{ $post->title }}}</a></li>
 										@endforeach
 									@else
 										<p>geen</p>

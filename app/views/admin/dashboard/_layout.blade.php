@@ -14,6 +14,9 @@
 		{{ HTML::style('/assets/admin/css/pages/dashboard.css') }}																
 		{{ HTML::style('/assets/admin/css/image-picker.css') }}									
 		{{ HTML::style('/assets/admin/css/animate.css') }}
+  		{{ HTML::style('/assets/admin/css/dropzone.css') }}
+  		{{ HTML::style('/assets/admin/css/jquery.mCustomScrollbar.min.css') }}
+
 		<!-- {{ HTML::script('/assets/admin/js/jquery-1.7.2.min.js') }} -->
 		{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js') }}
 		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

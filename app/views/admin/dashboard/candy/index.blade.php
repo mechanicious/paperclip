@@ -4,10 +4,10 @@
   <div class="span7">
     @if (is_null(Session::get('input.id')))
         {{-- Store --}}
-        <form action="{{ route('admin.dashboard.candy.store') }}" class='form-horizontal' method='post'>
+        <form style="display:none;" action="{{ route('admin.dashboard.candy.store') }}" class='form-horizontal' method='post'>
     @else
         {{-- Update --}}
-        <form action="{{ route('admin.dashboard.candy.update', Session::get('input.id')) }}" class='form-horizontal' method='post'>
+        <form style="display:none;" action="{{ route('admin.dashboard.candy.update', Session::get('input.id')) }}" class='form-horizontal' method='post'>
     @endif
         @yield('error')
         @yield('warning')
@@ -37,7 +37,7 @@
         </fieldset>
     </form>
   </div>
-  <div class="span4">
+  <div class="span4" style="display:none;">
     <script>
       $(document).ready(function() {
         $('#validate').on('click', function(e) {
@@ -65,5 +65,122 @@
     <div id="preview">
       <img src="">
     </div>
+  </div>
+      
+
+  <!-- content -->
+    <style type="text/css">
+      #thumbnail-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 6px;
+        float: right;
+        margin-right: 30px;
+      }
+    </style>
+    <div class="span4">
+      <img id="thumbnail-img" src="">
+    </div>
+    <div class="span7">
+      <div class="content mCustomScrollbar">
+        <form action="{{{ route('admin.dashboard.candy.upload') }}}" method="post" class="dropzone" id="dropzone-form">
+            <div class="fallback">
+              <input name="file" type="file" multiple />
+            </div>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="/assets/admin/js/dropzone.js"></script>
+    <script type="text/javascript" src="/assets/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript">
+    /**
+     * Dropzone
+     */
+    $(document).ready(function() {
+        var mydropzone = new Dropzone("#dropzone-form", {
+            acceptedFiles: "image/*",
+            dictDefaultMessage: '<i class="icon-4x icon-cloud-upload"></i><div style="font-size:12px; margin:0;">Drop files here to uplaod</div>',
+            prependPreview: true,
+            onPluginLoaded: function(plugin) {
+              jQuery.ajax('{{{ route('admin.dashboard.candy.upload.fetchUploads', array(0, 20)) }}}')
+              .done(function(data) {
+                var entries = JSON.parse(data);
+                entries.forEach(function(e, i) {
+                  var mockFile = {
+                    name: e.name, 
+                    size: e.size,
+                    url: e.url,
+                    width: 100,
+                    heigth: 100
+                  };
+                  plugin.options.addedfile.call(plugin, mockFile, true);
+                  var thumbnail = plugin.createThumbnailFromUrl(mockFile, e.url);
+                  plugin.options.thumbnail.call(plugin, mockFile, thumbnail);
+                  $(mockFile.previewElement).on('click', function() {
+                    $('#thumbnail-img').attr('src', thumbnail);
+                  })
+                  plugin.files.push(mockFile);
+                });
+              });
+            },
+            addRemoveLinks: true,
+            removedfile: function(f) {
+              if(f.status === 'error') return (_ref = f.previewElement) != null ? _ref.parentNode.removeChild(f.previewElement) : void 0;
+              jQuery.ajax('{{{ route('admin.dashboard.candy.upload.deleteByName', '') }}}/' + f.name)
+              .done(function(data) {
+                if(data.indexOf('ok') !== -1) {
+                  return (_ref = f.previewElement) != null ? _ref.parentNode.removeChild(f.previewElement) : void 0;
+                }
+              });
+            },
+            dictRemoveFile: '✘',
+            dictCancelUpload: '✘',
+            dictCancelUploadConfirmation: 'Sure?'
+        });
+        mydropzone
+        .on('success', function(f) {
+          if(f.previewElement) {
+            var src = $(f.previewElement).find('img').first().attr('src');
+            setThumbnail();
+            $(f.previewElement).on('click', function() {
+               setThumbnail();
+            })
+            function setThumbnail() {
+              $('#thumbnail-img').attr('src', src);
+            }
+          }
+        })
+        .on('removedfile', function(f) {
+          if(f.status === 'error') return;
+          var th = $('#thumbnail-img'), tsrc = th.attr('src');
+          if(f.url) {
+            console.log('hi');
+            if(f.url == tsrc) {
+              clearThumbnail();
+            }
+          }
+          else if(f.previewElement) {
+            var fsrc = $(f.previewElement).find('img').first().attr('src');
+            if(fsrc == tsrc) {
+              clearThumbnail();
+            }
+          }
+              console.log(f.url, tsrc);
+          function clearThumbnail() {
+            th.attr('src', '');
+          }
+        })
+
+        $('.content').mCustomScrollbar({
+            axis:"y",
+            setHeight: '250px',
+            scrollEasing: 'none',
+            contentTouchScroll: 25
+        });
+    });
+    </script>
+
+  <script>
+  </script>
   </div>
 @stop

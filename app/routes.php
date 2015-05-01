@@ -120,6 +120,12 @@ Route::group(array('prefix' => 'admin/dashboard/', 'before' => array('auth', 'ca
 	Route::post	('candy/update/{id}', 	array('as' => 'admin.dashboard.candy.update', 	'uses' => 'DashboardCandyController@update'));
 	Route::get	('candy/restore/{id}', 	array('as' => 'admin.dashboard.candy.restore', 	'uses' => 'DashboardCandyController@restore'));
 	Route::get	('candy/delete/{id}', 	array('as' => 'admin.dashboard.candy.delete', 	'uses' => 'DashboardCandyController@destroy'));
+	Route::post	('candy/upload', 	array('as' => 'admin.dashboard.candy.upload', 	'uses' => 'DashboardCandyController@upload'));
+	Route::get	('candy/upload/delete/{start}/{end}', 	array('as' => 'admin.dashboard.candy.upload.deleteByOffset', 	'uses' => 'DashboardCandyController@deleteUploadsByOffset'));
+	Route::get	('candy/upload/delete/{id}', 	array('as' => 'admin.dashboard.candy.upload.delete', 	'uses' => 'DashboardCandyController@deleteUploadedFile'));
+	Route::get	('candy/upload/deleteByName/{name}', 	array('as' => 'admin.dashboard.candy.upload.deleteByName', 	'uses' => 'DashboardCandyController@deleteFileByName'));
+	Route::get	('candy/upload/flush', 	array('as' => 'admin.dashboard.candy.upload.flush', 	'uses' => 'DashboardCandyController@flushUploads'));
+	Route::get	('candy/upload/fetch/{offset}/{amount}', 	array('as' => 'admin.dashboard.candy.upload.fetchUploads', 	'uses' => 'DashboardCandyController@fetchUploads'));
 	
 	/*----Dashboard Widget-------------------------------------------------------------------------------------*/
 	Route::get('widget', 							array('as' => 'admin.dashboard.widget', 		'uses' => 'DashboardWidgetController@index'));

@@ -25,8 +25,7 @@ return array(
 	| point for web requests into these applications from the outside.
 	|
 	*/
-
-	'public' => __DIR__.'/../public',
+	'public' => __DIR__.'/../../htdocs',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -13,14 +13,15 @@ return array(
 	|
 	*/
 
-	"home"			=>		"home",
-	"language"		=>		"language",
-	"category"		=>		"category",
-	"post"			=>		"post",
-	"page"			=>		"page",
-	"action"		=>		"action",
-	"candy"			=>		"candy",
-	"socialmedia"	=>		"social media",
-	"widget"		=>		"widget",
-	"dashboard"		=>		"dashboard"
+	"home"		=>	"home",
+	"language"	=>	"language",
+	"category"	=>	"category",
+	"post"		=>	"post",
+	"page"		=>	"page",
+	"action"	=>	"action",
+	"candy"		=>	"candy",
+	"socialmedia"=>	"social media",
+	"widget"	=>	"widget",
+	"dashboard"	=>	"dashboard",
+	'file'		=> 	'file',
 	);

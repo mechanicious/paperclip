@@ -3,9 +3,9 @@
 use PaperClip\Support\Contracts\PaperClipModel;
 use PaperClip\Support\Contracts\TablezatorInterface;
 
-class Category extends PaperClipModel implements TablezatorInterface 
+class Category extends PaperClipModel 
 {
-	protected $fillable = [];
+    protected $fillable = [];
 
     public function posts()
     {
@@ -28,7 +28,7 @@ class Category extends PaperClipModel implements TablezatorInterface
         ->where('deleted_at', '=', null)->get();
     }
 
-	public function language()
+    public function language()
     {
         return $this->belongsTo('Language');
     }
@@ -39,10 +39,10 @@ class Category extends PaperClipModel implements TablezatorInterface
     }
 
     // Tablezator::unforgenize will look for this.
-	public function identify()
-	{
-		return $this->category; 
-	}
+    public function identify()
+    {
+        return $this->category; 
+    }
 
     public static function whereId($id)
     {

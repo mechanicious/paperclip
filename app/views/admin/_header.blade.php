@@ -13,7 +13,7 @@
 	{{ HTML::style('http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600') }}    
 	{{ HTML::style('/assets/admin/css/style.css') }}
 	{{ HTML::style('/assets/admin/css/pages/signin.css') }}
-  {{ HTML::style('/assets/admin/css/animate.css') }}
+  	{{ HTML::style('/assets/admin/css/animate.css') }}
 </head>
 <body>
 @stop
