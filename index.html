@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+You will be redirected to the latest available API
+	<script type="text/javascript">
+		// @todo this page may function in the future as the api search engine
+		currentLocation = window.location.href.split('/');
+		currentLocation = currentLocation.splice(0, currentLocation.length-1);
+		
+		apis = ['latest', 'api-0.1.0'];
+
+		redirect = setTimeout(function(){
+			window.location = currentLocation + '/latest/index.html';
+		}, 2000);
+	</script>
+</body>
+</html>
