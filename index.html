@@ -8,7 +8,7 @@ You will be redirected to the latest available API
 	<script type="text/javascript">
 		// @todo this page may function in the future as the api search engine
 		currentLocation = window.location.href.split('/');
-		currentLocation = currentLocation.splice(0, currentLocation.length-1);
+		currentLocation = currentLocation.splice(0, currentLocation.length-1).join('/');
 		
 		apis = ['latest', 'api-0.1.0'];
 
