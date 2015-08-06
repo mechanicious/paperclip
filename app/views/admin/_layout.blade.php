@@ -1,7 +1,0 @@
-@include('admin._header')
-@include('admin._menu')
-@include('admin._footer')
-@yield('header')
-@yield('menu')
-@yield('content')
-@yield('footer')
